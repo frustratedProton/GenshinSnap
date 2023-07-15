@@ -1,0 +1,1 @@
+Tried Photoz Clone from [Marco Codes](https://www.youtube.com/@MarcoCodes) to start with Spring Boot
