@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="main.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		/>
+		<title>Genshin Impact Photo Storage</title>
+	</head>
+	<body>
+		<div class="center-container">
+			<div class="overlay"></div>
+			<h2 class="main-text">Photo Upload</h2>
+			<label for="fileupload" class="file-upload-label">Choose File</label>
+			<input
+				id="fileupload"
+				type="file"
+				name="fileupload"
+				accept="image/*"
+				onchange="previewImage(event)"
+			/>
 
+			<div class="image-preview-container">
+				<!-- <div id="image-preview" class="image-preview">
+					<span id="close-icon" class="close-icon" onclick="clearImagePreview()"
+						>
+							<i class="fa-solid fa-xmark"></i>
+						</span
+					>
+				</div> -->
+				<div class="image-preview-container">
+					<div id="image-preview" class="image-preview">
+						<!-- Image preview and close icon will be inserted here dynamically -->
+					</div>
+				</div>
+			</div>
 
-<h2>Photo Upload</h2>
+			<button id="upload-button" onclick="uploadFile()" class="">Upload</button>
+		</div>
 
-<input id="fileupload" type="file" name="fileupload" />
-<button id="upload-button" onclick="uploadFile()"> Upload </button>
-
-<script>
-    async function uploadFile() {
-        let formData = new FormData();
-        formData.append("data", fileupload.files[0]);
-        await fetch('http://localhost:8080/photoz', {
-            mode: 'no-cors',
-            method: "POST",
-            body: formData
-        }).then(result =>    result.text())
-            .then(text => alert(text));
-    }
-</script>
-</body>
+		<script src="script.js"></script>
+	</body>
 </html>

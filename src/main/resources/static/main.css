@@ -1,0 +1,140 @@
+@font-face {
+	font-family: Genshin-Font;
+	src: url('./assets/zh-cn.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url('./assets/Splashscreen_Default.webp');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	font-family: Genshin-Font, sans-serif;
+    font-size: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.center-container {
+	text-align: center;
+}
+
+.center-container h2,
+.center-container input,
+.center-container button {
+	margin-bottom: 0px;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: -1;
+}
+
+.main-text {
+	color: #ffffff;
+	font-size: 2.5rem; 
+	line-height: 1.5;
+}
+
+#upload-button {
+    background-color: #8a8374;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#upload-button:hover {
+    background-color: #856b59;
+}
+
+#upload-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #755c4b;
+}
+
+#fileupload {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.file-upload-label {
+    background-color: #8a8374;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.file-upload-label:hover {
+    background-color: #755c4b;
+}
+
+.file-upload-label:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #45352b;
+}
+
+.image-preview-container {
+    text-align: center; /* Center align the image preview */
+    margin-top: 20px;
+}
+
+.image-preview {
+    position: relative;
+    display: inline-block; /* Ensure inline block to center horizontally */
+    max-width: 300px; /* Adjust as needed */
+    max-height: 300px; /* Adjust as needed */
+    border: 1px solid #ccc; /* Optional: Add a border for clarity */
+}
+
+#preview-img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.close-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 50%;
+    display: none;
+}
+
+.close-icon:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
